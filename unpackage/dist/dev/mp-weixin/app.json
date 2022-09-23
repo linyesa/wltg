@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "pages/found/found",
+    "pages/line/line",
+    "pages/my/my",
+    "pages/xianlu/xianlu"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "文旅推广平台",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#e98f36",
+    "list": [
+      {
+        "text": "发现",
+        "iconPath": "static/images/found.png",
+        "selectedIconPath": "static/images/found_icon.png",
+        "pagePath": "pages/found/found"
+      },
+      {
+        "text": "路线",
+        "iconPath": "static/images/line.png",
+        "selectedIconPath": "static/images/line_icon.png",
+        "pagePath": "pages/line/line"
+      },
+      {
+        "text": "我的",
+        "iconPath": "static/images/my.png",
+        "selectedIconPath": "static/images/my_icon.png",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

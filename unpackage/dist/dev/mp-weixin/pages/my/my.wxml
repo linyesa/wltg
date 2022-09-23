@@ -1,0 +1,1 @@
+<view><button hidden="{{!(isShow)}}" class="login-btn" type="primary" data-event-opts="{{[['tap',[['getUserInfo',['$event']]]]]}}" bindtap="__e">微信用户一键登录</button><block wx:if="{{!isShow}}"><view><view class="_div">{{userInfo.nickName}}</view><image src="{{userInfo.avatarUrl}}"></image></view></block></view>

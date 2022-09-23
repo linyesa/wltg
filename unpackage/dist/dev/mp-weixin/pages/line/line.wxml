@@ -1,0 +1,1 @@
+<view><view><image class="image-bg" src="/static/images/chu.jpg"></image><view style="text-align:center;"><text>武隆出游 具体景点</text><button type="primary" data-event-opts="{{[['tap',[['choose',['$event']]]]]}}" bindtap="__e">立即选购</button></view></view></view>

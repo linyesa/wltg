@@ -1,0 +1,80 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/found/found",
+			"style": {
+				"navigationBarTitleText": "发现",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/line/line",
+			"style": {
+				"navigationBarTitleText": "路线"
+			}
+		}, 
+		{
+			"path": "pages/my/my",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+            "path" : "pages/xianlu/xianlu",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "线路详情",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/test/test",
+            "style" : {
+                "navigationBarTitleText": "test"
+            }
+            
+        }
+        ,{
+            "path" : "pages/test/test",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "文旅推广平台",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#000",
+		"selectedColor": "#e98f36",
+		"list": [{
+				"text": "发现",
+				"iconPath": "static/images/found.png",
+				"selectedIconPath": "static/images/found_icon.png",
+				"pagePath": "pages/found/found"
+			},
+			{
+				"text": "路线",
+				"iconPath": "static/images/line.png",
+				"selectedIconPath": "static/images/line_icon.png",
+				"pagePath": "pages/line/line"
+			},
+			{
+				"text": "我的",
+				"iconPath": "static/images/my.png",
+				"selectedIconPath": "static/images/my_icon.png",
+				"pagePath": "pages/my/my"
+			}
+		]
+	}
+}
