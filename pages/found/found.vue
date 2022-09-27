@@ -2,7 +2,13 @@
 	<view>
 		<view>
 			<uni-search-bar placeholder="搜索景点/酒店" bgColor="#EEEEEE" @confirm="search" />
-			<image class="image-bg" src="/static/images/long.jpg"/>
+			<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval"
+							:duration="duration">
+							<swiper-item v-for="(image,index) in imagePath" :key="index" :index="index">
+								<image :src="image.path" class="image-bg"></image>
+							</swiper-item>
+							
+						</swiper>
 		</view>
 		<uni-calendar 
 		ref="calendar"
@@ -10,17 +16,22 @@
 		@confirm="confirm"
 		:lunar="true"
 		 />
-		 <button type="primary" plain="true" @click="open">选择日期</button>
-		 <uni-grid :column="4" :highlight="true" @change="change">
+		 <view><button type="primary" plain="true" @click="open">选择日期</button></view>
+		 <view><uni-grid :column="4" :highlight="true" @change="change">
 		 				<uni-grid-item v-for="(value,key,index) in list" :index="index" :key="index">
 		 					<view class="grid-item-box" style="background-color: #fff;">
 		 						<uni-icons :type="key" :size="90" color="#a4b2ff" />
 		 						<text class="text" v-text="value" style="margin-left: 30%;"></text>
 		 					</view>
-							
 		 				</uni-grid-item>
 		</uni-grid>
-		
+		</view>
+		<view style="margin-top: 20px;">
+			<view>1{{foundInfo.scenicName}}</view>
+			<view>2{{foundInfo.scenicAddress}}</view>
+			<view>3{{foundInfo.scenicDescribe}}</view>
+			<image v-if="foundInfo.scenicImage" :src="`${backendURL}/img/show/${foundInfo.scenicImage}`"></image>
+		</view>
 	</view>
 </template>
 
@@ -32,8 +43,18 @@
 				time:"当前时间",
 				list:{
 					"map-filled":"景点","paperplane-filled":"路线","gift":"周边","home-filled":"酒店"
-				}
-				
+				},
+				indicatorDots: true,
+				autoplay: true,
+				interval: 2000,
+				duration: 500,
+				imagePath:[
+					{path:"/static/images/long.jpg"},
+					{path:"/static/images/t7.jpg"},
+					{path:"/static/images/t8.jpg"},
+					{path:"/static/images/t9.jpg"},
+				],
+				foundInfo:{}
 			};
 	    },
 	    methods: {
@@ -62,11 +83,24 @@
 				
 						})
 					}
-		    			}
+		    		},
+			fetchFoundInfo() {
+				this.$axios({
+					method: 'get',
+					url: '/index/foundInfo',
+				}).then(res => {
+					this.foundInfo = res.data;
+				}).catch(err => {
+					console.log(err)
+				})
+			},
 	    },
 		computed:{
 			
 		},
+		mounted(){
+			this.fetchFoundInfo()
+		}
 		
 	};
 </script>
@@ -99,6 +133,12 @@
 	}
 	.image-bg{
 		width: 100%;
+		display: block;
+		height: 100%;
+		line-height: 300rpx;
+	}
+	.swiper{
+			height: 500rpx;	
 	}
 	
 </style>

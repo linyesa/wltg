@@ -2,6 +2,10 @@ import App from './App'
 
 // #ifndef VUE3
 import Vue from 'vue'
+import {backendURL, service} from 'static/utils/https.js';
+Vue.prototype.$axios = service;
+Vue.prototype.backendURL = backendURL;
+
 Vue.config.productionTip = false
 App.mpType = 'app'
 const app = new Vue({

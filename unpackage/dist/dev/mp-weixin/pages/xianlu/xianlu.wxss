@@ -2,4 +2,31 @@
 .image-bg{
 	width: 100%;
 }
+.big{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.wen{
+	flex:1;
+}
+.jia{
+	color: gray;
+	text-decoration: line-through;
+	font-size: 50%;
+}
+.shi{
+	color:red;
+	font-weight: bold;
+}
+.tishi .nei{
+	color:darkgray
+}
+.tishi text{
+	font-size: 1.5px;
+}
+.zhengwen{
+	color:darkgray;
+	font-size: 1.5px;
+}
 

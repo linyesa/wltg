@@ -3,7 +3,9 @@
     "pages/found/found",
     "pages/line/line",
     "pages/my/my",
-    "pages/xianlu/xianlu"
+    "pages/xianlu/xianlu",
+    "pages/test/test",
+    "pages/jiesuan/jiesuan"
   ],
   "subPackages": [],
   "window": {

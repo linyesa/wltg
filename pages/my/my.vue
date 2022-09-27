@@ -1,12 +1,44 @@
 <template>
 	<view>
+		
+		<!-- <view v-if="!isShow">
+			<div>{{userInfo.nickName}}</div>
+			<image :src="userInfo.avatarUrl"></image>
+		</view> -->
+		<view style="display: flex;flex-direction: column;">
+			<view style="display: flex;align-items: center;">
+				<image src="/static/images/tou.jpg" style="width:3rem;height:3rem;"></image>
+				<view style="flex-grow: 1;">用户名</view>
+				<image src="/static/images/tou.jpg" style="width:3rem;height:3rem;"></image>
+			</view>
+			<view style="display:flex;align-items: center;border-bottom: 0.01rem solid #c6c6c6;" @click="tiao">
+				<view style="flex-grow: 1;">
+					<uni-section class="mb-10" title="我的订单" type="circle" titleFontSize="17px"></uni-section>
+				</view>
+				<view>
+					<uni-icons type="forward" size="30" ></uni-icons>
+				</view>
+			</view>
+			<view style="display:flex;align-items: center;border-bottom: 0.01rem solid #c6c6c6;"@click="tiao">
+				<view style="flex-grow: 1;">
+					<uni-section class="mb-10" title="我的优惠券" type="circle" titleFontSize="17px"></uni-section>
+				</view>
+				<view>
+					<uni-icons type="forward" size="30"></uni-icons>
+				</view>
+			</view>
+			<view style="display:flex;align-items: center;border-bottom: 0.01rem solid #c6c6c6;"@click="tiao">
+				<view style="flex-grow: 1;">
+					<uni-section class="mb-10" title="客服电话" type="circle" titleFontSize="17px"></uni-section>
+				</view>
+				<view>
+					<uni-icons type="forward" size="30"></uni-icons>
+				</view>
+			</view>
+		</view>
 		<button v-show="isShow" class="login-btn" type="primary" @click="getUserInfo">
 			微信用户一键登录
 		</button>
-		<view v-if="!isShow">
-			<div>{{userInfo.nickName}}</div>
-			<image :src="userInfo.avatarUrl"></image>
-		</view>
 	</view>
 </template>
 
@@ -88,6 +120,9 @@
 					},
 				});
 			},
+			tiao(e){
+				console.log("click",e)
+			}
 		}
 	}
 </script>

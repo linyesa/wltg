@@ -1,0 +1,39 @@
+<template>
+	<view style="display: flex;flex-direction: column;">
+		<view style="display: flex;justify-content: center;margin-top: 100px;">
+			<image src="/static/images/paysuccess.png" style="width: 100rpx;height: 100rpx;"></image></view>
+		<view style="display: flex;justify-content: center;"><text>支付成功</text></view>
+		<view style="margin-top: 50px;margin-bottom: 10px;">
+			<text style="color: gray;">订单编号 44955495454654657487948</text>
+		</view>
+		<view style="margin-bottom: 10px;">
+			<text style="color: gray;">订单详情 查看</text>
+		</view>
+		<view style="margin-bottom: 10px;">
+			<text style="color: gray;">支付方式 微信</text>
+		</view>
+		<view style="margin-bottom: 30px;">
+			<text style="color: gray;">支付时间 2022-10-01 00:00:00</text>
+		</view>
+		<view>
+			<text style="color: gray;">已支付成功，如有疑问请联系客服</text>
+		</view>
+	</view>
+</template>
+
+<script>
+	export default {
+		data() {
+			return {
+				
+			}
+		},
+		methods: {
+			
+		}
+	}
+</script>
+
+<style>
+
+</style>

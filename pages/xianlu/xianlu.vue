@@ -54,7 +54,25 @@
 		<view><text class="zhengwen">是吗是吗是吗是吗是吗说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明说明</text>
 		</view>
 		<uni-goods-nav :fill="true" :options="options" :button-group="customButtonGroup" @click="onClick"
-						@buttonClick="buttonClick" />
+						@buttonClick="buttonClick" v-if="flag" />
+		<uni-popup ref="popup" background-color="#fff" @change="change" type="bottom">
+						<view class="popup-content" style="display: flex;flex-direction: column;height: 50%;">
+							<text class="text" style="text-align: center;">费用明细</text>
+							<view style="width: 100%;display: flex;flex-grow: 1;">
+								<text style="flex-grow: 1">基本费用</text><text>$1999</text>
+							</view>
+							<view style="width: 100%;display: flex;flex-grow: 1;">
+								<text style="flex-grow: 1">成人</text><text>$3999</text>
+							</view>
+							<view style="width: 100%;display: flex;flex-grow: 1;">
+								<text style="flex-grow: 1">儿童</text><text>$8999</text>
+							</view><view style="width: 100%;display: flex;flex-grow: 1;">
+								<text style="flex-grow: 1;">总额</text><text style="color:red">$435999</text>
+							</view>
+							<button style="color:#fff;background-color: orange;" @click="zhifu">立即支付</button>
+						</view>
+		</uni-popup>
+	    
 	</view>
 </template>
 
@@ -62,6 +80,7 @@
 	export default {
 		data() {
 			return {
+				type:"center",
 				active:0,
 				list:[
 					"品质保证",
@@ -107,7 +126,8 @@
 										backgroundColor: 'linear-gradient(90deg, #60F3FF, #088FEB)',
 										color: '#fff'
 									}
-								]
+								],
+				flag:true,
 				
 			}
 		},
@@ -118,10 +138,31 @@
 								icon: 'none'
 							})
 						},
-						buttonClick(e) {
+			buttonClick(e) {
 							console.log(e)
-							this.options[2].info++
-						}
+							if(e.index==0){
+								this.options[2].info++
+							}
+							else if(e.index==1){
+								console.log("lijigoumai")
+								this.flag=false
+								this.toggle("bottom")
+							}
+				},
+			toggle(type) {
+							this.type = type
+							// open 方法传入参数 等同在 uni-popup 组件上绑定 type属性
+							this.$refs.popup.open(type)
+						},
+			zhifu(){
+				uni.navigateTo(
+				{
+					url:"/pages/jiesuan/jiesuan"
+				})
+			},
+			change(e) {
+							console.log('当前模式：' + e.type + ',状态：' + e.show);
+						},
 		
 		},
 		onLoad(option){

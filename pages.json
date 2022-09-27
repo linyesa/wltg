@@ -30,16 +30,17 @@
                 "enablePullDownRefresh": false
             }
             
-        }
-        ,{
+        },{
             "path" : "pages/test/test",
-            "style" : {
-                "navigationBarTitleText": "test"
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
             }
             
         }
         ,{
-            "path" : "pages/test/test",
+            "path" : "pages/jiesuan/jiesuan",
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "",

@@ -23,5 +23,12 @@
 }
 .image-bg{
 	width: 100%;
+	display: block;
+	height: 100%;
+	line-height: 300rpx;
 }
+.swiper{
+		height: 500rpx;
+}
+
 
