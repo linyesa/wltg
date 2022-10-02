@@ -11,7 +11,7 @@
 				<view style="flex-grow: 1;">用户名</view>
 				<image src="/static/images/tou.jpg" style="width:3rem;height:3rem;"></image>
 			</view>
-			<view style="display:flex;align-items: center;border-bottom: 0.01rem solid #c6c6c6;" @click="tiao">
+			<view style="display:flex;align-items: center;border-bottom: 0.01rem solid #c6c6c6;" @click="order">
 				<view style="flex-grow: 1;">
 					<uni-section class="mb-10" title="我的订单" type="circle" titleFontSize="17px"></uni-section>
 				</view>
@@ -122,6 +122,12 @@
 			},
 			tiao(e){
 				console.log("click",e)
+			},
+			order(e){
+				console.log(e);
+				uni.navigateTo({
+					url:"/pages/order/order"
+				})
 			}
 		}
 	}

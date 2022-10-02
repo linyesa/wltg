@@ -30,7 +30,7 @@
 			<view>1{{foundInfo.scenicName}}</view>
 			<view>2{{foundInfo.scenicAddress}}</view>
 			<view>3{{foundInfo.scenicDescribe}}</view>
-			<image v-if="foundInfo.scenicImage" :src="`${backendURL}/img/show/${foundInfo.scenicImage}`"></image>
+			<image v-if="foundInfo.scenicImage" :src="`${backendURL}/img/show/${foundInfo.scenicImage}`" style="width: 100%;"></image>
 		</view>
 	</view>
 </template>

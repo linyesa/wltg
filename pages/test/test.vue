@@ -19,6 +19,25 @@
 							<button style="color:#fff;background-color: orange" @click="zhifu">立即支付</button>
 						</view>
 		</uni-popup>
+		<view>
+			<uni-collapse  accordion v-model="accordionVal">
+				<uni-collapse-item title="手风琴效果">
+					<view class="content">
+						<text class="text">手风琴效果同时只会保留一个组件的打开状态，其余组件会自动关闭。</text>
+					</view>
+				</uni-collapse-item>
+				<uni-collapse-item title="手风琴效果">
+					<view class="content">
+						<text class="text">手风琴效果同时只会保留一个组件的打开状态，其余组件会自动关闭。</text>
+					</view>
+				</uni-collapse-item>
+				<uni-collapse-item title="手风琴效果">
+					<view class="content">
+						<text class="text">手风琴效果同时只会保留一个组件的打开状态，其余组件会自动关闭。</text>
+					</view>
+				</uni-collapse-item>
+			</uni-collapse>
+			</view>
 	</view>
 </template>
 
@@ -26,7 +45,8 @@
 	export default {
 		data() {
 			return {
-				foundInfo:{}
+				foundInfo:{},
+				accordionVal:'0',
 			}
 		},
 		methods: {
@@ -53,6 +73,9 @@
 				{
 					url:"/pages/jiesuan/jiesuan"
 				})
+			},
+			changee(e) {
+				console.log(e);
 			}
 			
 		}
